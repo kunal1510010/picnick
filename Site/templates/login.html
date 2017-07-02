@@ -1,0 +1,333 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Picnik Register</title>
+<link href="{% static '../static/css/bootstrap.css' %}" rel='stylesheet' type='text/css' />
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="../static/js/jquery.min.js"></script>
+<!-- Custom Theme files -->
+<link href="{% static '../static/css/style.css'%}" rel="stylesheet" type="text/css" media="all" />
+<!-- Custom Theme files -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!--webfont-->
+<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900,200italic,300italic,400italic,600italic,700italic,900italic' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Lobster+Two:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
+<!--Animation-->
+<script src="../static/js/wow.min.js"></script>
+<link href="../static/css/animate.css" rel='stylesheet' type='text/css' />
+<script>
+	new WOW().init();
+</script>
+<script type="text/javascript" src="../static/js/move-top.js"></script>
+<script type="text/javascript" src="../static/js/easing.js"></script>
+<script type="text/javascript">
+			jQuery(document).ready(function($) {
+				$(".scroll").click(function(event){
+					event.preventDefault();
+					$('html,body').animate({scrollTop:$(this.hash).offset().top},1200);
+				});
+			});
+		</script>
+<script src="js/simpleCart.min.js"> </script>
+</head>
+<body>
+    <!-- header-section-starts -->
+<body style="background:#FFFFFF;">
+    <!-- header-section-starts -->
+	<div class="header">
+		<div class="container">
+			<div class="top-header">
+				<div class="logo">
+					<a href=""><img src="../static/images/logo.png" class="img-responsive" alt="" /></a>
+				</div>
+				<div class="queries">
+					<p>Questions? Call us Toll-free!<span>+91-9999-692-671 </span><label>(11AM to 11PM)</label></p>
+				</div>
+				<div class="header-right">
+						<div class="cart box_1">
+
+                            <form>
+    <div class="form-group">
+      <label for="sel1">Search :</label>
+      <input type="text" name="" class="form-control" placeholder="Location or Cuisines" />
+      </div></form>
+
+
+
+							<div class="clearfix"> </div>
+						</div>
+					</div>
+				<div class="clearfix"></div>
+			</div>
+		</div>
+			<div class="menu-bar">
+			<div class="container">
+				<div class="top-menu">
+					<ul>
+						<li class="active"><a href="#Home" class="scroll">Home</a></li>|
+                        <li><a href="">About Us</a></li>|
+						<li><a href=""> Our Stores</a></li>|
+						<li><a href="">Offers</a></li>|
+						<li><a href="">contact</a></li>|
+                        <li><a href="">Feedback</a></li>
+						<div class="clearfix"></div>
+					</ul>
+				</div>
+				<div class="login-section">
+					<ul>
+						<li><a href="">Login</a>  </li> |
+						<li><a href="">Register</a> </li> |
+						<li><a href="#">Help</a></li>
+						<div class="clearfix"></div>
+					</ul>
+				</div>
+				<div class="clearfix"></div>
+			</div>
+		</div>
+
+	<!-- header-section-ends -->
+	<!-- content-section-starts -->
+		<div class="content">
+	<div class="container">
+		<div class="login-page">
+			    <div class="dreamcrub">
+			   	 <ul class="breadcrumbs">
+                    <li class="home">
+                       <a href="index.html" title="Go to Home Page">Home</a>&nbsp;
+                       <span>&gt;</span>
+                    </li>
+                    <li class="women">
+                       Login
+                    </li>
+                </ul>
+                <ul class="previous">
+                	<li><a href="index.html">Back to Previous Page</a></li>
+                </ul>
+                <div class="clearfix"></div>
+			   </div>
+			   <div class="account_grid">
+			   <div class="col-md-6 login-left wow fadeInLeft" data-wow-delay="0.4s">
+			  	 <h3>NEW CUSTOMERS</h3>
+				 <p>By creating an account with our store, you will be able to move through the checkout process faster, store multiple shipping addresses, view and track your orders in your account and more.</p>
+				 <a class="acount-btn" href="register.html">Create an Account</a>
+			   </div>
+			   <div class="col-md-6 login-right wow fadeInRight" data-wow-delay="0.4s">
+			  	<h3>REGISTERED CUSTOMERS</h3>
+				<p>If you have an account with us, please log in.</p>
+				<form method="post">
+                  {% csrf_token %}
+
+				  <div>
+                      {{ form.email_id.errors }}
+                         <span><label for="{{ form.email_id.id_for_label }}">Email ID:<label>*</label></label></span>
+                      {{ form.email_id }}
+				  </div>
+				  <div>
+					{{ form.password.errors }}
+                         <span><label for="{{ form.password.id_for_label }}">Email ID:<label>*</label></label></span>
+                      {{ form.password }}
+				  </div>
+				  <a class="forgot" href="#">Forgot Your Password?</a>
+				  <fieldset class="account-action">
+                               <input class="btn" type="submit" name="submit" value="Submit">
+                  </fieldset>
+			    </form>
+			   </div>
+			   <div class="clearfix"> </div>
+			 </div>
+		   </div>
+</div>
+<div class="special-offers-section">
+  <div class="container">
+    <div class="special-offers-section-head text-center dotted-line">
+      <h4>Our Stores</h4>
+    </div>
+    <div class="special-offers-section-grids">
+      <div class="m_3"><span class="middle-dotted-line"> </span> </div>
+      <div class="container">
+        <ul id="flexiselDemo3">
+          <li>
+            <div class="offer">
+              <div class="offer-image"> <img src="../static/images/mess/mess-1.jpg" width="150" height="100"  alt=""/> </div>
+              <div class="offer-text">
+                <h4>HotMess</h4>
+                <h5>Connaught Place</h5>
+                <p>North Indian, Mediterranean, Asian, Fast Food</p>
+                <input type="button" value="Grab It">
+                <span></span> </div>
+              <div class="clearfix"></div>
+            </div>
+          </li>
+          <li>
+            <div class="offer">
+              <div class="offer-image"> <img src="../static/images/mess/off.jpg" width="150" height="100"  alt=""/> </div>
+              <div class="offer-text">
+                <h4>OFF Campus</h4>
+                <h5>Satyaniketan New Delhi</h5>
+                <p>Cafe, Continental, Italian, Fast Food</p>
+                <input type="button" value="Grab It">
+                <span></span> </div>
+              <div class="clearfix"></div>
+            </div>
+          </li>
+          <li>
+            <div class="offer">
+              <div class="offer-image"> <img src="../static/images/mess/qd.jpg" width="150" height="100" alt=""/> </div>
+              <div class="offer-text">
+                <h4>QD's Restaurant</h4>
+                <h5>Delhi University-GTB Nagar</h5>
+                <p>Chinese, North Indian, Fast Food, Italian</p>
+                <input type="button" value="Grab It">
+                <span></span> </div>
+              <div class="clearfix"></div>
+            </div>
+          </li>
+          <li>
+            <div class="offer">
+              <div class="offer-image"> <img src="../static/images/mess/wenger.jpg" width="150" height="100" alt=""/> </div>
+              <div class="offer-text">
+                <h4>Wenger's</h4>
+                <h5>Connaught Place</h5>
+                <p>Bakery, Fast Food, Desserts</p>
+                <input type="button" value="Grab It">
+                <span></span> </div>
+              <div class="clearfix"></div>
+            </div>
+          </li>
+        </ul>
+        <script type="text/javascript">
+					$(window).load(function() {
+
+						$("#flexiselDemo3").flexisel({
+							visibleItems: 3,
+							animationSpeed: 1000,
+							autoPlay: false,
+							autoPlaySpeed: 3000,
+							pauseOnHover: true,
+							enableResponsiveBreakpoints: true,
+							responsiveBreakpoints: {
+								portrait: {
+									changePoint:480,
+									visibleItems: 1
+								},
+								landscape: {
+									changePoint:640,
+									visibleItems: 2
+								},
+								tablet: {
+									changePoint:768,
+									visibleItems: 3
+								}
+							}
+						});
+
+					});
+				    </script>
+        <script type="text/javascript" src="js/jquery.flexisel.js"></script>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="clearfix"></div>
+	<div class="contact-section" id="contact">
+  <div class="container">
+    <div class="contact-section-grids">
+      <div class="col-md-3 contact-section-grid wow fadeInLeft" data-wow-delay="0.4s">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><i class="point"></i></li>
+          <li class="data"><a href="#">About Us</a></li>
+        </ul>
+        <ul>
+          <li><i class="point"></i></li>
+          <li class="data"><a href="#">Contact Us</a></li>
+        </ul>
+        <ul>
+          <li><i class="point"></i></li>
+          <li class="data"><a href="#">Privacy Policy</a></li>
+        </ul>
+        <ul>
+          <li><i class="point"></i></li>
+          <li class="data"><a href="#">Terms of Use</a></li>
+        </ul>
+      </div>
+      <div class="col-md-3 contact-section-grid wow fadeInLeft" data-wow-delay="0.4s">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><i class="point"></i></li>
+          <li class="data"><a href="#">Offers</a></li>
+        </ul>
+        <ul>
+          <li><i class="point"></i></li>
+          <li class="data"><a href="#">Our Stores</a></li>
+        </ul>
+        <ul>
+          <li><i class="point"></i></li>
+          <li class="data"><a href="#">Orders</a></li>
+        </ul>
+        <ul>
+          <li><i class="point"></i></li>
+          <li class="data"><a href="#">Feedback</a></li>
+        </ul>
+      </div>
+      <div class="col-md-3 contact-section-grid wow fadeInRight" data-wow-delay="0.4s">
+        <h4>Follow Us On...</h4>
+        <ul>
+          <li><i class="fb"></i></li>
+          <li class="data"> <a href="#"> Facebook</a></li>
+        </ul>
+        <ul>
+          <li><i class="tw"></i></li>
+          <li class="data"> <a href="#">Twitter</a></li>
+        </ul>
+        <ul>
+          <li><i class="in"></i></li>
+          <li class="data"><a href="#"> Linkedin</a></li>
+        </ul>
+        <ul>
+          <li><i class="gp"></i></li>
+          <li class="data"><a href="#">Google Plus</a></li>
+        </ul>
+      </div>
+      <div class="col-md-3 contact-section-grid nth-grid wow fadeInRight" data-wow-delay="0.4s">
+        <h4>Subscribe Newsletter</h4>
+        <p>To get latest updates and food deals every week</p>
+        <input placeholder="Enter Your Email Id" type="text" class="text" value="" onFocus="this.value = '';" onBlur="if (this.value == '') {this.value = '';}">
+        <input type="submit" value="submit">
+      </div>
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</div>
+</div>
+
+	<!-- content-section-ends -->
+	<!-- footer-section-starts -->
+	<div class="footer">
+		<div class="container">
+			<p class="wow fadeInLeft" data-wow-delay="0.4s">&copy; 2014  All rights  Reserved | Template by &nbsp;<a href="http://w3layouts.com" target="target_blank">W3Layouts</a></p>
+		</div>
+	</div>
+	<!-- footer-section-ends -->
+	  <script type="text/javascript">
+						$(document).ready(function() {
+							/*
+							var defaults = {
+					  			containerID: 'toTop', // fading element id
+								containerHoverID: 'toTopHover', // fading element hover id
+								scrollSpeed: 1200,
+								easingType: 'linear'
+					 		};
+							*/
+
+							$().UItoTop({ easingType: 'easeOutQuart' });
+
+						});
+					</script>
+				<a href="#" id="toTop" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
+
+</body>
+</html>

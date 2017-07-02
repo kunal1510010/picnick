@@ -1,0 +1,841 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>picnick</title>
+<link href="../static/css/bootstrap.css" rel='stylesheet' type='text/css' />
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="../static/js/jquery.min.js"></script>
+<!-- Custom Theme files -->
+<link href="../static/css/style.css" rel="stylesheet" type="text/css" media="all" />
+<!-- Custom Theme files -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!--webfont-->
+<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900,200italic,300italic,400italic,600italic,700italic,900italic' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Lobster+Two:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
+<!--Animation-->
+<script src="../static/js/wow.min.js"></script>
+<link href="../static/css/animate.css" rel='stylesheet' type='text/css' />
+<link href="../static/css/zom.css" rel='stylesheet' type='text/css' />
+<script>
+	new WOW().init();
+</script>
+<script src="js/simpleCart.min.js"> </script>	
+<script type="text/javascript" src="../static/js/move-top.js"></script>
+<script type="text/javascript" src="../static/js/easing.js"></script>
+<script type="text/javascript">
+			jQuery(document).ready(function($) {
+				$(".scroll").click(function(event){		
+					event.preventDefault();
+					$('html,body').animate({scrollTop:$(this.hash).offset().top},1200);
+				});
+			});
+		</script>
+        
+        
+        
+        
+</head>
+<body style="background:#FFFFFF;">
+    <!-- header-section-starts -->
+	<div class="header">
+		<div class="container">
+			<div class="top-header">
+				<div class="logo">
+					<a href=""><img src="../static/images/logo.png" class="img-responsive" alt="" /></a>
+				</div>
+				<div class="queries">
+					<p>Questions? Call us Toll-free!<span>+91-9999-692-671 </span><label>(11AM to 11PM)</label></p>
+				</div>
+				<div class="header-right">
+						<div class="cart box_1">
+							 
+                            <form>
+    <div class="form-group">
+        <form method="post">
+        {% csrf_token %}
+        {{ form.query.errors }}
+        <span><label for="{{ form.query.id_for_label }}">Search:<label>*</label></label></span>
+        {{ form.query }}
+        </form>
+      </div></form>
+                             
+                             
+                             
+							<div class="clearfix"> </div>
+						</div>
+					</div>
+				<div class="clearfix"></div>
+			</div>
+		</div>
+			<div class="menu-bar">
+			<div class="container">
+				<div class="top-menu">
+					<ul>
+						<li class="active"><a href="#Home" class="scroll">Home</a></li>|
+                        <li><a href="">About Us</a></li>|
+						<li><a href=""> Our Stores</a></li>|
+						<li><a href="">Offers</a></li>|
+						<li><a href="">contact</a></li>|
+                        <li><a href="">Feedback</a></li>
+						<div class="clearfix"></div>
+					</ul>
+				</div>
+				<div class="login-section">
+					<ul>
+						<li><a href="{% url 'Site:Login User' %}">Login</a>  </li> |
+						<li><a href="{% url 'Site:Register User' %}">Register</a> </li> |
+						<li><a href="#">Help</a></li>
+						<div class="clearfix"></div>
+					</ul>
+				</div>
+				<div class="clearfix"></div>
+			</div>
+		</div>
+		<div class="banner wow fadeInUp" data-wow-delay="0.4s" id="Home">
+		    <div class="container">
+				<div class="banner-info">
+                
+                
+                
+	    
+		
+					
+				
+			</div>
+		</div>
+	</div>
+	<!-- header-section-ends -->
+	<!-- content-section-starts -->
+	<div class="content">
+		<div class="ordering-section" id="Order">
+			<div class="container">
+				<div class="ordering-section-head text-center wow bounceInRight" data-wow-delay="0.4s">
+					<h3>Our Best Collections</h3>
+					<div class="dotted-line">
+						<h4>Restaurant</h4>
+					</div>
+				</div>
+                
+                
+                
+                <!-- content-section-starts -->
+	<div class="Popular-Restaurants-content">
+		<div class="Popular-Restaurants-grids">
+			<div class="container">
+            
+            
+            
+            
+            <!---zom------------->
+            
+            
+            
+            <section class="section mtop pbot0">
+    <div class="bb0 collections-grid col-l-16">
+		            <div class="pb5">
+                <div class="row col-res-list collection_listings_container">
+                <div class="col-s-8 col-l-1by3"><div class="relative  top-res-box   entity-ads-snippet-track mbot" data-entity-id="18445790" data-entity-type="restaurant" data-rating="4.9" data-banner-id="480592" data-slot-id="296536" data-source="desktop" data-res-id="18445790" data-res-position="1">
+
+                          
+        <a href="" data-link-type="restaurant" class="relative top-res-box-bg pl10 ptop0" data-original="" style="background-size: cover; background-image:url(images/restaurent/kc.jpg); height: 150px; display: block; border-radius: 4px; background-position: center center;">
+    
+            <div data-res-id="18445790" class="ads-res-snippet-rating-large  rating-for-18445790 level-8">
+        4.9
+      </div>
+              
+              <div class="ui tiny yellow label">
+          <span class="ttupper">
+            Featured
+          </span>
+        </div>
+      
+          </a>
+
+    <div class="ptop0 pbot0 pl10 pr10">
+
+                      <a href="" class="jumbo_track_collections" data-link-type="restaurant">
+          <div class="res_title zblack bold " title="Kopper Kadai">
+            KC kicthen Caboodle
+          </div>
+        </a>
+              
+                      <a class="zone jumbo_track_collections" data-link-type="zone|restaurant" href="">
+          <div class="nowrap grey-text fontsize5 ttupper">Dwarka Sec-7 Ramfal Chawk, New Delhi</div>
+        </a>
+              
+                <div class="nowrap grey-text">
+         Crunchy Momos
+        </div>
+        
+            </div>  
+</div>
+</div>
+
+
+<div class="col-s-8 col-l-1by3"><div class="relative  top-res-box   entity-ads-snippet-track mbot" data-entity-id="18512599" data-entity-type="restaurant" data-rating="3.0" data-banner-id="480260" data-slot-id="296631" data-source="desktop" data-res-id="18512599" data-res-position="2">
+
+                          
+        <a href="" data-link-type="restaurant" class="relative top-res-box-bg pl10 ptop0" data-original="" style="background-size: cover; background-image:url(images/restaurent/wolf.jpg); height: 150px; display: block; border-radius: 4px; background-position: center center;">
+    
+            <div data-res-id="18512599" class="ads-res-snippet-rating-large  rating-for-18512599 level-5">
+       4.5
+      </div>
+              
+              <div class="ui tiny yellow label">
+          <span class="ttupper">
+            Featured
+          </span>
+        </div>
+      
+          </a>
+
+    <div class="ptop0 pbot0 pl10 pr10">
+
+                      <a href="" class="jumbo_track_collections" data-link-type="restaurant">
+          <div class="res_title zblack bold">
+            Wolf of Eat Street
+          </div>
+        </a>
+              
+                      <a class="zone jumbo_track_collections" data-link-type="zone|restaurant" href="">
+          <div class="nowrap grey-text fontsize5 ttupper">Dwarka Sec-12 Outside of Metro Station Opp. City Center Mall</div>
+        </a>
+              
+                <div class="nowrap grey-text">
+          Noodles, Rolls, Chilli Potato
+        </div>
+        
+            </div>  
+</div>
+</div>
+
+
+<div class="col-s-8 col-l-1by3"><div class="relative  top-res-box   entity-ads-snippet-track mbot" data-entity-id="18517162" data-entity-type="restaurant" data-rating="4.4" data-banner-id="480396" data-slot-id="296632" data-source="desktop" data-res-id="18517162" data-res-position="3">
+
+                          
+        <a href="" data-original="" style="background-size: cover; background-image:url(images/restaurent/no-name.jpg); height: 150px; display: block; border-radius: 4px; background-position: center center;">
+    
+            <div data-res-id="18517162" class="ads-res-snippet-rating-large  rating-for-18517162 level-7">
+        4.5
+      </div>
+              
+              <div class="ui tiny yellow label">
+          <span class="ttupper">
+            Featured
+          </span>
+        </div>
+      
+          </a>
+
+    <div class="ptop0 pbot0 pl10 pr10">
+
+                      <a href="" class="jumbo_track_collections" data-link-type="restaurant">
+          <div class="res_title zblack bold ">
+            Street Food Shop
+          </div>
+        </a>
+              
+                      <a class="zone jumbo_track_collections" data-link-type="zone|restaurant" href="" >
+          <div class="nowrap grey-text fontsize5 ttupper">Janak Puri District Center, Janak Palace Craft Market.</div>
+        </a>
+              
+                <div class="nowrap grey-text">
+          Spring Rolls and Chilly Potato/ Chilly Paneer
+        </div>
+        
+            </div>  
+</div>
+</div>
+
+
+
+<div class="col-s-8 col-l-1by3"><div class="relative  top-res-box   entity-ads-snippet-track mbot" data-entity-id="18489814" data-entity-type="restaurant" data-rating="3.6" data-banner-id="480002" data-slot-id="296635" data-source="desktop" data-res-id="18489814" data-res-position="4">
+
+                          
+        <a href="" data-link-type="restaurant" class="relative top-res-box-bg pl10 ptop0" data-original="" style="background-size: cover; background-image:url(images/restaurent/sgf.jpg); height: 150px; display: block; border-radius: 4px; background-position: center center;">
+    
+            <div data-res-id="18489814" class="ads-res-snippet-rating-large  rating-for-18489814 level-6">
+        3.6
+      </div>
+              
+              <div class="ui tiny yellow label">
+          <span class="ttupper">
+            Featured
+          </span>
+        </div>
+      
+          </a>
+
+    <div class="ptop0 pbot0 pl10 pr10">
+
+                      <a href="" class="jumbo_track_collections" data-link-type="restaurant">
+          <div class="res_title zblack bold ">
+            SGF
+          </div>
+        </a>
+              
+                      <a class="zone jumbo_track_collections" data-link-type="zone|restaurant" href="">
+          <div class="nowrap grey-text fontsize5 ttupper">Janak Puri</div>
+        </a>
+              
+                <div class="nowrap grey-text">
+          Veg Wings, Dahi Kabab, Veg Noodels
+        </div>
+        
+            </div>  
+</div>
+</div>
+
+<div class="col-s-8 col-l-1by3"><div class="relative  top-res-box   entity-ads-snippet-track mbot" data-entity-id="18400722" data-entity-type="restaurant" data-rating="4.2" data-banner-id="480692" data-slot-id="296638" data-source="desktop" data-res-id="18400722" data-res-position="5">
+
+                          
+        <a href="" data-original="" style="background-size: cover; background-image:url(images/restaurent/gupta-ji.jpg); height: 150px; display: block; border-radius: 4px; background-position: center center;">
+    
+            <div data-res-id="18400722" class="ads-res-snippet-rating-large  rating-for-18400722 level-7">
+        4.5
+      </div>
+              
+              <div class="ui tiny yellow label">
+          <span class="ttupper">
+            Featured
+          </span>
+        </div>
+      
+          </a>
+
+    <div class="ptop0 pbot0 pl10 pr10">
+
+                      <a href="" class="jumbo_track_collections" data-link-type="restaurant">
+          <div class="res_title zblack bold">
+            Gupta Ji Matka Kulfi
+          </div>
+        </a>
+              
+                      <a class="zone jumbo_track_collections" data-link-type="zone|restaurant" href="" >
+          <div class="nowrap grey-text fontsize5 ttupper">Karam Pura</div>
+        </a>
+              
+                <div class="nowrap grey-text">
+         Matka Kulfi, Rabri Faluda,
+        </div>
+        
+            </div>  
+</div>
+</div>
+
+
+<div class="col-s-8 col-l-1by3"><div class="relative  top-res-box   entity-ads-snippet-track mbot" data-entity-id="18449810" data-entity-type="restaurant" data-rating="3.7" data-banner-id="478746" data-slot-id="296639" data-source="desktop" data-res-id="18449810" data-res-position="6">
+
+                          
+        <a href="" data-link-type="restaurant" class="relative top-res-box-bg pl10 ptop0" data-original="" style="background-size: cover; background-image:url(images/restaurent/kumar.jpg); height: 150px; display: block; border-radius: 4px; background-position: center center;">
+    
+            <div data-res-id="18449810" class="ads-res-snippet-rating-large  rating-for-18449810 level-6">
+        4.5
+      </div>
+              
+              <div class="ui tiny yellow label">
+          <span class="ttupper">
+            Featured
+          </span>
+        </div>
+      
+          </a>
+
+    <div class="ptop0 pbot0 pl10 pr10">
+
+                      <a href="" class="jumbo_track_collections" data-link-type="restaurant">
+          <div class="res_title zblack bold " title="Klub Koots">
+            Kumar Samose Wala
+          </div>
+        </a>
+              
+                      <a class="zone jumbo_track_collections" data-link-type="zone|restaurant" href="" >
+          <div class="nowrap grey-text fontsize5 ttupper">H2/31, Near Milan Cinema, Karampura, New Delhi</div>
+        </a>
+              
+                <div class="nowrap grey-text">
+          Samosa
+        </div>
+        
+            </div>  
+</div>
+</div><div class="col-s-8 col-l-1by3"><div class="relative  top-res-box   entity-ads-snippet-track mbot" data-entity-id="18445803" data-entity-type="restaurant" data-rating="3.2" data-banner-id="475801" data-slot-id="296640" data-source="desktop" data-res-id="18445803" data-res-position="7">
+
+                          
+        <a href="" data-link-type="restaurant" class="relative top-res-box-bg pl10 ptop0" data-original="" style="background-size: cover; background-image:url(images/restaurent/lavli-jalevi.jpg); height: 150px; display: block; border-radius: 4px; background-position: center center;">
+    
+            <div data-res-id="18445803" class="ads-res-snippet-rating-large  rating-for-18445803 level-5">
+        3.2
+      </div>
+              
+              <div class="ui tiny yellow label">
+          <span class="ttupper">
+            Featured
+          </span>
+        </div>
+      
+          </a>
+
+    <div class="ptop0 pbot0 pl10 pr10">
+
+                      <a href="" class="jumbo_track_collections" data-link-type="restaurant">
+          <div class="res_title zblack bold " >
+            Lavli Jalebi
+          </div>
+        </a>
+              
+                      <a class="zone jumbo_track_collections" data-link-type="zone|restaurant" href="" >
+          <div class="nowrap grey-text fontsize5 ttupper">Karampura, New Delhi</div>
+        </a>
+              
+                <div class="nowrap grey-text">
+          Jalebi
+        </div>
+        
+            </div>  
+</div>
+</div><div class="col-s-8 col-l-1by3"><div class="relative  top-res-box   entity-ads-snippet-track mbot" data-entity-id="18287362" data-entity-type="restaurant" data-rating="3.9" data-banner-id="0" data-slot-id="0" data-source="desktop" data-res-id="18287362" data-res-position="8">
+
+                          
+        <a href="" data-link-type="restaurant" class="relative top-res-box-bg pl10 ptop0" data-original="" style="background-size: cover; background-image:url(images/restaurent/rp-rolls-point.jpg); height: 150px; display: block; border-radius: 4px; background-position: center center;">
+    
+            <div data-res-id="18287362" class="ads-res-snippet-rating-large  rating-for-18287362 level-6">
+        3.5
+      </div>
+              
+      
+          </a>
+
+    <div class="ptop0 pbot0 pl10 pr10">
+
+                      <a href="" class="jumbo_track_collections" data-link-type="restaurant">
+          <div class="res_title zblack bold " title="Imly">
+            Roll Point
+          </div>
+        </a>
+              
+                      <a class="zone jumbo_track_collections" data-link-type="zone|restaurant" href="" >
+          <div class="nowrap grey-text fontsize5 ttupper">Karampura, New Delhi</div>
+        </a>
+              
+                <div class="nowrap grey-text">
+          Rolls Point
+        </div>
+        
+            </div>  
+</div>
+</div>
+
+
+
+
+<div class="col-s-8 col-l-1by3"><div class="relative  top-res-box   entity-ads-snippet-track mbot" data-entity-id="18415341" data-entity-type="restaurant" data-rating="3.7" data-banner-id="0" data-slot-id="0" data-source="desktop" data-res-id="18415341" data-res-position="9">
+
+                          
+        <a href="" data-link-type="restaurant" class="relative top-res-box-bg pl10 ptop0" data-original="" style="background-size: cover; background-image:url(images/restaurent/yadav.jpg); height: 150px; display: block; border-radius: 4px; background-position: center center;">
+    
+            <div data-res-id="18415341" class="ads-res-snippet-rating-large  rating-for-18415341 level-6">
+        3.7
+      </div>
+              
+      
+          </a>
+
+    <div class="ptop0 pbot0 pl10 pr10">
+
+                      <a href="" class="jumbo_track_collections" data-link-type="restaurant">
+          <div class="res_title zblack bold " title="IHOP">
+            Yadav Burger Center
+          </div>
+        </a>
+              
+                      <a class="zone jumbo_track_collections" data-link-type="zone|restaurant" href="" t>
+          <div class="nowrap grey-text fontsize5 ttupper">Karampura, New Delhi</div>
+        </a>
+              
+                <div class="nowrap grey-text">
+         Burger
+        </div>
+        
+            </div>  
+</div>
+</div>
+
+
+
+
+        
+            </div>  
+</div>
+</div>                </div>
+            </div>
+            </div>
+
+   <div class="clear"></div>
+
+</section>
+            
+            
+            
+            
+            
+            
+            
+          <!---------end zom------------>  
+            
+            
+           </div></div>
+	</div>
+
+                
+                
+                
+				
+			</div>
+		</div>
+		<div class="special-offers-section">
+			<div class="container">
+				<div class="special-offers-section-head text-center dotted-line">
+					<h4>Our Stores</h4>
+				</div>
+				<div class="special-offers-section-grids">
+				 <div class="m_3"><span class="middle-dotted-line"> </span> </div>
+				   <div class="container">
+					  <ul id="flexiselDemo3">
+						<li>
+							<div class="offer">
+								<div class="offer-image">	
+									<img src="../static/images/mess/mess-1.jpg" width="150" height="100"  alt=""/>
+								</div>
+								<div class="offer-text">
+									<h4>HotMess</h4>
+                                    <h5>Connaught Place</h5>
+									<p>North Indian, Mediterranean, Asian, Fast Food</p>
+									<input type="button" value="Grab It">
+									<span></span>
+								</div>
+								<div class="clearfix"></div>
+							</div>
+						</li>
+						<li>
+							<div class="offer">
+								<div class="offer-image">	
+									<img src="../static/images/mess/off.jpg" width="150" height="100"  alt=""/>
+								</div>
+								<div class="offer-text">
+									<h4>OFF Campus</h4>
+                                     <h5>Satyaniketan New Delhi</h5>
+									<p>Cafe, Continental, Italian, Fast Food</p>
+									<input type="button" value="Grab It">
+									<span></span>
+								</div>
+								<div class="clearfix"></div>
+							</div>
+						</li>
+						<li>
+							<div class="offer">
+								<div class="offer-image">	
+									<img src="../static/images/mess/qd.jpg" width="150" height="100" alt=""/>
+								</div>
+								<div class="offer-text">
+									<h4>QD's Restaurant</h4>
+                                     <h5>Delhi University-GTB Nagar</h5>
+									<p>Chinese, North Indian, Fast Food, Italian</p>
+									<input type="button" value="Grab It">
+									<span></span>
+								</div>
+								
+								<div class="clearfix"></div>
+								</div>
+						</li>
+						<li>
+							<div class="offer">
+								<div class="offer-image">	
+									<img src="../static/images/mess/wenger.jpg" width="150" height="100" alt=""/>
+								</div>
+								<div class="offer-text">
+									<h4>Wenger's</h4>
+                                    <h5>Connaught Place</h5>
+									<p>Bakery, Fast Food, Desserts</p>
+									<input type="button" value="Grab It">
+									<span></span>
+								</div>
+								
+								<div class="clearfix"></div>
+								</div>
+					    </li>
+					 </ul>
+				 <script type="text/javascript">
+					$(window).load(function() {
+						
+						$("#flexiselDemo3").flexisel({
+							visibleItems: 3,
+							animationSpeed: 1000,
+							autoPlay: false,
+							autoPlaySpeed: 3000,    		
+							pauseOnHover: true,
+							enableResponsiveBreakpoints: true,
+							responsiveBreakpoints: { 
+								portrait: { 
+									changePoint:480,
+									visibleItems: 1
+								}, 
+								landscape: { 
+									changePoint:640,
+									visibleItems: 2
+								},
+								tablet: { 
+									changePoint:768,
+									visibleItems: 3
+								}
+							}
+						});
+						
+					});
+				    </script>
+				    <script type="text/javascript" src="js/jquery.flexisel.js"></script>
+				</div>
+			</div>
+		</div>
+		</div>
+		<div class="popular-restaurents" id="Popular-Restaurants">
+			<div class="container">
+				<div class="col-md-4 top-restaurents">
+					<div class="top-restaurent-head">
+						<h3>Restaurants</h3>
+					</div>
+					<div class="top-restaurent-grids">
+						<div class="top-restaurent-logos">
+							<div class="res-img-1 wow bounceIn" data-wow-delay="0.4s">
+								<img src="../static/images/rest/5p.jpg" class="img-responsive" alt="" />
+							</div>
+							<div class="res-img-2 wow bounceIn" data-wow-delay="0.4s">
+							    <img src="../static/images/rest/6p.jpg" class="img-responsive" alt="" />
+							</div>
+							<div class="res-img-1 wow bounceIn" data-wow-delay="0.4s">
+							    <img src="../static/images/rest/download.png" class="img-responsive" alt="" />
+							</div>
+							<div class="res-img-2 wow bounceIn" data-wow-delay="0.4s">
+							    <img src="../static/images/rest/images (2).jpg" class="img-responsive" alt="" />
+							</div>
+							<div class="res-img-1 nth-grid1 wow bounceIn" data-wow-delay="0.4s">
+							    <img src="../static/images/rest/images (3).jpg" class="img-responsive" alt="" />
+							</div>
+							<div class="res-img-2 nth-grid1 wow bounceIn" data-wow-delay="0.4s">
+							    <img src="../static/images/rest/images.jpg" class="img-responsive" alt="" />
+							</div>
+							<div class="clearfix"></div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-8 top-cuisines">
+					<div class="top-cuisine-head">
+						<h3>Top Cuisines</h3>
+					</div>
+					<div class="top-cuisine-grids">
+						<div class="top-cuisine-grid wow bounceIn" data-wow-delay="0.4s">
+						    <a href=""><img src="../static/images/cuisine1.jpg" class="img-responsive" alt="" /> </a>
+							<label>Cuisine Name</label>
+					    </div>
+						<div class="top-cuisine-grid wow bounceIn" data-wow-delay="0.4s">
+						    <a href=""><img src="../static/images/cuisine2.jpg" class="img-responsive" alt="" /> </a>
+							<label>Cuisine Name</label>
+					    </div>
+						<div class="top-cuisine-grid wow bounceIn" data-wow-delay="0.4s">
+						    <a href=""><img src="../static/images/cuisine3.jpg" class="img-responsive" alt="" /> </a>
+							<label>Cuisine Name</label>
+					    </div>
+						<div class="top-cuisine-grid nth-grid wow bounceIn" data-wow-delay="0.4s">
+						    <a href=""><img src="../static/images/cuisine4.jpg" class="img-responsive" alt="" /> </a>
+							<label>Cuisine Name</label>
+					    </div>
+						<div class="top-cuisine-grid nth-grid1 wow bounceIn" data-wow-delay="0.4s">
+						    <a href=""><img src="../static/images/cuisine5.jpg" class="img-responsive" alt="" /> </a>
+							<label>Cuisine Name</label>
+					    </div>
+						<div class="top-cuisine-grid nth-grid1 wow bounceIn" data-wow-delay="0.4s">
+						    <a href=""><img src="../static/images/cuisine6.jpg" class="img-responsive" alt="" /> </a>
+							<label>Cuisine Name</label>
+					    </div>
+						<div class="top-cuisine-grid nth-grid1 wow bounceIn" data-wow-delay="0.4s">
+						    <a href=""><img src="../static/images/cuisine7.jpg" class="img-responsive" alt="" /> </a>
+							<label>Cuisine Name</label>
+					    </div>
+						<div class="top-cuisine-grid nth-grid nth-grid1 wow bounceIn" data-wow-delay="0.4s">
+						    <a href=""><img src="../static/images/cuisine8.jpg" class="img-responsive" alt="" /> </a>
+							<label>Cuisine Name</label>
+					    </div>
+						<div class="clearfix"></div>
+					</div>
+				</div>
+				<div class="clearfix"></div>
+			</div>
+		</div>
+		<div class="service-section">
+			<div class="service-section-top-row">
+				<div class="container">
+					<div class="service-section-top-row-grids wow bounceInLeft" data-wow-delay="0.4s">
+					<div class="col-md-3 service-section-top-row-grid1">
+						<h3>Enjoy Exclusive Food Order any of these</h3>
+					</div>
+					<div class="col-md-2 service-section-top-row-grid2">
+						<ul>
+							<li><i class="arrow"></i></li>
+							<li class="lists">Party Orders</li>
+						</ul>
+						<ul>
+							<li><i class="arrow"></i></li>
+							<li class="lists">Home Made Food</li>
+						</ul>
+						<ul>
+							<li><i class="arrow"></i></li>
+							<li class="lists"> Diet Food </li>
+						</ul>
+					</div>
+					<div class="col-md-5 service-section-top-row-grid3">
+						<img src="../static/images/lunch.png" class="img-responsive" alt="" />
+					</div>
+					<div class="col-md-2 service-section-top-row-grid4 wow swing animated" data-wow-delay= "0.4s">
+						<a href=""><input type="submit" value="Order Now"></a>
+					</div>
+					<div class="clearfix"></div>
+					</div>
+				</div>
+			</div>
+			<div class="service-section-bottom-row">
+				<div class="container">
+					<div class="col-md-4 service-section-bottom-grid wow bounceIn "data-wow-delay="0.2s">
+						<div class="icon">
+							<img src="../static/images/icon1.jpg" class="img-responsive" alt="" />
+						</div>
+						<div class="icon-data">
+							<h4>100% Service Guarantee</h4>
+							<p>Lorem ipsum dolor sit amet, consect-etuer adipiscing elit. </p>
+						</div>
+						<div class="clearfix"></div>
+					</div>
+					<div class="col-md-4 service-section-bottom-grid wow bounceIn "data-wow-delay="0.2s">
+						<div class="icon">
+							<img src="../static/images/icon2.jpg" class="img-responsive" alt="" />
+						</div>
+						<div class="icon-data">
+							<h4>Fully Secure Payment</h4>
+							<p>Lorem ipsum dolor sit amet, consect-etuer adipiscing elit. </p>
+						</div>
+						<div class="clearfix"></div>
+					</div>
+					<div class="col-md-4 service-section-bottom-grid wow bounceIn "data-wow-delay="0.2s">
+						<div class="icon">
+							<img src="../static/images/icon3.jpg" class="img-responsive" alt="" />
+						</div>
+						<div class="icon-data">
+							<h4>100% Satisfication</h4>
+							<p>Lorem ipsum dolor sit amet, consect-etuer adipiscing elit. </p>
+						</div>
+						<div class="clearfix"></div>
+					</div>
+					<div class="clearfix"></div>
+				</div>
+			</div>
+		</div>
+		<div class="contact-section" id="contact">
+			<div class="container">
+				<div class="contact-section-grids">
+					<div class="col-md-3 contact-section-grid wow fadeInLeft" data-wow-delay="0.4s">
+						<h4>Quick Links</h4>
+						<ul>
+							<li><i class="point"></i></li>
+							<li class="data"><a href="#">About Us</a></li>
+						</ul>
+						<ul>
+							<li><i class="point"></i></li>
+							<li class="data"><a href="#">Contact Us</a></li>
+						</ul>
+						<ul>
+							<li><i class="point"></i></li>
+							<li class="data"><a href="#">Privacy Policy</a></li>
+						</ul>
+						<ul>
+							<li><i class="point"></i></li>
+							<li class="data"><a href="#">Terms of Use</a></li>
+						</ul>
+					</div>
+					<div class="col-md-3 contact-section-grid wow fadeInLeft" data-wow-delay="0.4s">
+						<h4>Quick Links</h4>
+						<ul>
+							<li><i class="point"></i></li>
+							<li class="data"><a href="#">Offers</a></li>
+						</ul>
+						<ul>
+							<li><i class="point"></i></li>
+							<li class="data"><a href="#">Our Stores</a></li>
+						</ul>
+						<ul>
+							<li><i class="point"></i></li>
+							<li class="data"><a href="#">Orders</a></li>
+						</ul>
+						<ul>
+							<li><i class="point"></i></li>
+							<li class="data"><a href="#">Feedback</a></li>
+						</ul>
+					</div>
+					<div class="col-md-3 contact-section-grid wow fadeInRight" data-wow-delay="0.4s">
+						<h4>Follow Us On...</h4>
+						<ul>
+							<li><i class="fb"></i></li>
+							<li class="data"> <a href="#">  Facebook</a></li>
+						</ul>
+						<ul>
+							<li><i class="tw"></i></li>
+							<li class="data"> <a href="#">Twitter</a></li>
+						</ul>
+						<ul>
+							<li><i class="in"></i></li>
+							<li class="data"><a href="#"> Linkedin</a></li>
+						</ul>
+						<ul>
+							<li><i class="gp"></i></li>
+							<li class="data"><a href="#">Google Plus</a></li>
+						</ul>
+					</div>
+					<div class="col-md-3 contact-section-grid nth-grid wow fadeInRight" data-wow-delay="0.4s">
+						<h4>Subscribe Newsletter</h4>
+						<p>To get latest updates and food deals every week</p>
+						<input placeholder="Enter Your Email Id" type="text" class="text" value="" onFocus="this.value = '';" onBlur="if (this.value == '') {this.value = '';}">
+						<input type="submit" value="submit">
+						</div>
+					<div class="clearfix"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- content-section-ends -->
+	<!-- footer-section-starts -->
+	<div class="footer">
+		<div class="container">
+			<p class="wow fadeInLeft" data-wow-delay="0.4s">&copy; 2017  All rights  Reserved | Powered by &nbsp;<a href="" target="target_blank">WORTHAM WORLD</a></p>
+		</div>
+	</div>
+	<!-- footer-section-ends -->
+	  <script type="text/javascript">
+						$(document).ready(function() {
+							/*
+							var defaults = {
+					  			containerID: 'toTop', // fading element id
+								containerHoverID: 'toTopHover', // fading element hover id
+								scrollSpeed: 1200,
+								easingType: 'linear' 
+					 		};
+							*/
+							
+							$().UItoTop({ easingType: 'easeOutQuart' });
+							
+						});
+					</script>
+				<a href="#" id="toTop" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
+
+</body>
+</html>
