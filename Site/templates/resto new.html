@@ -1,0 +1,470 @@
+{%  load static %}
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+<link href="{% static '../static/css/bootstrap.css' %}" rel='stylesheet' type='text/css' />
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="../static/js/jquery.min.js"></script>
+<!-- Custom Theme files -->
+<link href="{% static '../static/css/style.css' %}" rel="stylesheet" type="text/css" media="all" />
+<!-- Custom Theme files -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!--webfont-->
+<!--<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900,200italic,300italic,400italic,600italic,700italic,900italic' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Lobster+Two:400,400italic,700,700italic' rel='stylesheet' type='text/css'>-->
+<!--Animation-->
+<script src="js/wow.min.js"></script>
+
+<link href="../static/css/animate.css" rel='stylesheet' type='text/css' />
+<script>
+	new WOW().init();
+</script>
+<script type="text/javascript" src="../static/js/move-top.js"></script>
+<script type="text/javascript" src="../static/js/easing.js"></script>
+<script type="text/javascript">
+			jQuery(document).ready(function($) {
+				$(".scroll").click(function(event){		
+					event.preventDefault();
+					$('html,body').animate({scrollTop:$(this.hash).offset().top},1200);
+				});
+			});
+		</script>
+<style>
+.box {
+  width: 40%;
+  margin: 0 auto;
+  background: rgba(255,255,255,0.2);
+  padding: 35px;
+  border: 2px solid #fff;
+  border-radius: 20px/50px;
+  background-clip: padding-box;
+  text-align: center;
+  
+}
+
+.button {
+  font-size: 1em;
+  padding: 10px;
+  color: #fff;
+  border: 2px solid #06D85F;
+  border-radius: 20px/50px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.3s ease-out;
+}
+.button:hover {
+  background: #06D85F;
+}
+
+.overlay {
+
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.7);
+  transition: opacity 500ms;
+  visibility: hidden;
+  opacity: 0;
+  z-index:9999;
+  position:absolute
+}
+.overlay:target {
+  visibility: visible;
+  opacity: 1;
+}
+
+.popup {
+  margin: 70px auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 5px;
+  width: 30%;
+  position: relative;
+  transition: all 5s ease-in-out;
+}
+
+.popup h2 {
+  margin-top: 0;
+  color: #333;
+  font-family: Tahoma, Arial, sans-serif;
+}
+.popup .close {
+  position: absolute;
+  top: 20px;
+  right: 0px;
+  transition: all 200ms;
+  font-size: 30px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #333;
+}
+.popup .close:hover {
+  color: #06D85F;
+}
+.popup .content {
+  max-height: 30%;
+  overflow: auto;
+}
+
+@media screen and (max-width: 700px){
+  .box{
+    width: 70%;
+  }
+  .popup{
+    width: 70%;
+  }
+}
+
+	</style>	
+<script src="js/simpleCart.min.js"> </script>
+
+<link rel="stylesheet" href="{% static '../static/css/style-tab.css' %}">
+
+</head>
+<body style="background:#FFFFFF;">
+
+<div id="popup1" class="overlay">
+	<div class="popup">
+		<h3 style="color:#d26202">Call Now : {{ vendor.phone_number }}</h3>
+		<a class="close" href="#">&times;</a>
+		<div class="content" style="background:url(images/order1.jpg);">
+		
+		</div>
+	</div>
+</div>
+
+
+
+<!-- header-section-starts -->
+<div class="header">
+  <div class="container">
+    <div class="top-header">
+      <div class="logo"> <a href=""><img src="{% static '../static/images/logo.png' %}" class="img-responsive" alt="" /></a> </div>
+      <div class="queries">
+        <p style="line-height:30px; text-align:center;">Questions? Call us Toll-free!<span>+91-9999-692-671 </span><br>
+          <span>(11AM to 11PM)</span>
+        </p>
+      </div>
+      <div class="header-right">
+        <div class="cart box_1">
+          <form>
+            <div class="form-group">
+              <span for="sel1"><strong>Search :</strong></span>
+              <input type="text" name="" class="form-control" placeholder="Location or Cuisines" />
+            </div>
+          </form>
+          <div class="clearfix"> </div>
+        </div>
+      </div>
+      <div class="clearfix"></div>
+    </div>
+  </div>
+  <div class="menu-bar">
+    <div class="container">
+      <div class="top-menu">
+        <ul>
+          <li class="active"><a href="{% url 'Site:Home' %}" class="scroll">Home</a></li>
+          |
+          <li><a href="">About Us</a></li>
+          |
+          <li><a href=""> Our Stores</a></li>
+          |
+          <li><a href="">Offers</a></li>
+          |
+          <li><a href="">contact</a></li>
+          |
+          <li><a href="">Feedback</a></li>
+          <div class="clearfix"></div>
+        </ul>
+      </div>
+      <div class="login-section">
+        <ul>
+          <li><a href="">Login</a> </li>
+          |
+          <li><a href="">Register</a> </li>
+          |
+          <li><a href="#">Help</a></li>
+          <div class="clearfix"></div>
+        </ul>
+      </div>
+      <div class="clearfix"></div>
+    </div>
+  </div>
+  
+  
+  </div>
+	<!-- content-section-starts -->
+	<div class="Popular-Restaurants-content">
+		<div class="Popular-Restaurants-grids">
+			<div class="container-fluid">
+			
+				<div class="Popular-Restaurants-grid wow fadeInRight" data-wow-delay="0.4s">
+					<div class="col-md-8 restaurent-logo">
+						<img src="{% static '../static/images/1(1).jpg' %}" class="img-responsive img-thumbnail" alt="" />
+					</div>
+					<div class="col-md-4 restaurent-title">
+					
+							 <h4><a href="#">{{ vendor.restaurant_name }}</a></h4>
+                            <h5><a href="#"><strong style="padding-left:5px; line-height:35px;">Address :</strong>{{ vendor.address }}</a></h5>
+                            <h5><a href="#"><strong style="padding-left:5px; line-height:35px;">Contact No :</strong> +91-{{ vendor.phone_number }}</a></h5>
+                            <h5><a href="#"><strong style="padding-left:5px; line-height:35px;">Payment Mode :</strong> Cash & Cards</a></h5>
+                            {% if vendor.home_delivery == True %}
+                                <h5><a href="#"><strong style="padding-left:5px; line-height:35px;">Home Delivery :</strong> Available</a></h5>
+                            {% else %}
+                                <h5><a href="#"><strong style="padding-left:5px; line-height:35px;">Home Delivery :</strong> Not Available</a></h5>
+                            {% endif %}
+
+                        <br>
+                       <a href="#popup1" class="bg-danger text-white button" style="background:#FF6600; color:#FFFFFF; padding:10px;">Order Now </a>
+           </div>
+					
+					<div class="clearfix"></div>
+				</div>
+				
+                
+                 </div>
+        
+        
+        
+        
+        
+        <div class="container-fluid">
+        
+        <div class="tab-wrap">
+  
+    <input type="radio" name="tabs" id="tab1" checked>
+	
+    <div class="tab-label-content" id="tab1-content">
+      <label for="tab1">Overview</label>
+      <div class="tab-content">
+      
+    <h4><a href="#">{{ vendor.restaurant_name }}</a></h4>
+                            <h5><a href="#"><strong style="padding-left:5px; line-height:35px;">Address :</strong>{{ vendor.address }}</a></h5>
+                            <h5><a href="#"><strong style="padding-left:5px; line-height:35px;">Contact No :</strong> +91-{{ vendor.phone_number }}</a></h5>
+                            <h5><a href="#"><strong style="padding-left:5px; line-height:35px;">Payment Mode :</strong> Cash & Cards</a></h5>
+                            {% if vendor.home_delivery == True %}
+                                <h5><a href="#"><strong style="padding-left:5px; line-height:35px;">Home Delivery :</strong> Available</a></h5>
+                            {% else %}
+                                <h5><a href="#"><strong style="padding-left:5px; line-height:35px;">Home Delivery :</strong> Not Available</a></h5>
+                            {% endif %}
+
+
+                       <br>
+                       
+                       <a href="#popup1" class="bg-danger text-white button" style="background:#FF6600; color:#FFFFFF; padding:10px;">Order Now </a>
+      
+      
+      
+      
+      
+      
+      
+      </div>
+    </div>
+     
+    <input type="radio" name="tabs" id="tab2">
+    <div class="tab-label-content" id="tab2-content">
+    
+    
+      <label for="tab2">Menu</label>
+      <div class="tab-content">	
+      <style>
+      .pure-table{empty-cells:show;border:1px solid #cbcbcb; width:790px;}.pure-table caption{color:#000;font:italic 85%/1 arial,sans-serif;padding:1em 0;text-align:center}.pure-table td,.pure-table th{border-left:1px solid #cbcbcb;border-width:0 0 0 1px;font-size:inherit;margin:0;overflow:visible;padding:.5em 1em}.pure-table td:first-child,.pure-table th:first-child{border-left-width:0}.pure-table thead{background-color:#e0e0e0;color:#000;text-align:left;vertical-align:bottom}.pure-table td{background-color:transparent}.pure-table-odd td,.pure-table-striped tr:nth-child(2n-1) td{background-color:#f2f2f2}.pure-table-bordered td{border-bottom:1px solid #cbcbcb}.pure-table-bordered tbody>tr:last-child>td{border-bottom-width:0}.pure-table-horizontal td,.pure-table-horizontal th{border-width:0 0 1px;border-bottom:1px solid #cbcbcb}.pure-table-horizontal tbody>tr:last-child>td{border-bottom-width:0}
+      
+      </style>
+     <table class="pure-table">
+    <thead>
+        <tr>
+            <th>Sr No.</th>
+            <th>Item Name</th>
+            <th>Item Price</th>
+
+        </tr>
+    </thead>
+
+    <tbody>
+       
+
+
+        {% for MenuItem in menu %}
+            <tr>
+            <td>{{ MenuItem.item_id }}</td>
+            <td>{{ MenuItem.item_name }}</td>
+            <td>{{ MenuItem.item_price }}</td>
+            </tr>
+        {% endfor  %}
+
+     
+        
+    </tbody>
+</table>
+      
+      
+        
+        
+        </div>
+    </div>
+    
+    <input type="radio" name="tabs" id="tab3">
+    <div class="tab-label-content" id="tab3-content">
+      <label for="tab3">Reviews</label>
+      <div class="tab-content">TAB 3 - Donec vulputate ante ac ligula vestibulum, id mollis diam commodo. Integer at consequat magna. Sed elit sem, dictum nec porttitor ac, ultrices id enim. Morbi semper eros a enim malesuada, eu finibus erat dictum. Ut vitae orci a odio sagittis malesuada. Cras volutpat vel lorem in tempor. Duis ultricies lectus sit amet tellus vehicula faucibus. Etiam sed leo ac erat tempor feugiat at quis ipsum. Mauris pellentesque nisl lorem, ac finibus sapien sagittis vel. Donec et lobortis est. Vestibulum dignissim ligula nec erat interdum, quis sollicitudin metus pretium. Vestibulum quis dui sapien. Proin commodo justo ac orci elementum molestie. Aliquam mattis orci vitae volutpat commodo.</div>
+    </div>
+  
+     <input type="radio" name="tabs" id="tab4">
+     <div class="tab-label-content" id="tab4-content">
+      <label for="tab4">Photo Gallery</label>
+      <div class="tab-content">
+      
+      <div class="col-md-3"><img src="../static/images/cuisine2.jpg" class="img-thumbnail"> </div>
+      <div class="col-md-3"><img src="../static/images/cuisine2.jpg" class="img-thumbnail"> </div>
+      <div class="col-md-3"><img src="../static/images/cuisine2.jpg" class="img-thumbnail"> </div>
+      <div class="col-md-3"><img src="../static/images/cuisine2.jpg" class="img-thumbnail"> </div>
+      <div class="col-md-3"><img src="../static/images/cuisine2.jpg" class="img-thumbnail"> </div>
+      <div class="col-md-3"><img src="../static/images/cuisine2.jpg" class="img-thumbnail"> </div><div class="col-md-3"><img src="images/cuisine2.jpg" class="img-thumbnail"> </div>
+      <div class="col-md-3"><img src="../static/images/cuisine2.jpg" class="img-thumbnail"> </div>
+      
+      
+      </div>
+    </div>
+    
+    <div class="slide"></div>
+  
+</div></div>
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
+<link href='https://fonts.googleapis.com/css?family=Roboto:400,500,300,700' rel='stylesheet' type='text/css'>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+    </div>  
+
+</div></div>
+                    
+                    
+                
+				
+		
+				
+			</div>
+		</div>
+	</div>
+    
+    </div></div>
+    
+    
+    
+	<div class="contact-section" id="contact" style="margin-top:150px;">
+			<div class="container">
+				<div class="contact-section-grids">
+					<div class="col-md-3 contact-section-grid wow fadeInLeft" data-wow-delay="0.4s">
+						<h4>Site Links</h4>
+						<ul>
+							<li><i class="point"></i></li>
+							<li class="data"><a href="#">About Us</a></li>
+						</ul>
+						<ul>
+							<li><i class="point"></i></li>
+							<li class="data"><a href="#">Contact Us</a></li>
+						</ul>
+						<ul>
+							<li><i class="point"></i></li>
+							<li class="data"><a href="#">Privacy Policy</a></li>
+						</ul>
+						<ul>
+							<li><i class="point"></i></li>
+							<li class="data"><a href="#">Terms of Use</a></li>
+						</ul>
+					</div>
+					<div class="col-md-3 contact-section-grid wow fadeInLeft" data-wow-delay="0.4s">
+						<h4>Site Links</h4>
+						<ul>
+							<li><i class="point"></i></li>
+							<li class="data"><a href="#">About Us</a></li>
+						</ul>
+						<ul>
+							<li><i class="point"></i></li>
+							<li class="data"><a href="#">Contact Us</a></li>
+						</ul>
+						<ul>
+							<li><i class="point"></i></li>
+							<li class="data"><a href="#">Privacy Policy</a></li>
+						</ul>
+						<ul>
+							<li><i class="point"></i></li>
+							<li class="data"><a href="#">Terms of Use</a></li>
+						</ul>
+					</div>
+					<div class="col-md-3 contact-section-grid wow fadeInRight" data-wow-delay="0.4s">
+						<h4>Follow Us On...</h4>
+						<ul>
+							<li><i class="fb"></i></li>
+							<li class="data"> <a href="#">  Facebook</a></li>
+						</ul>
+						<ul>
+							<li><i class="tw"></i></li>
+							<li class="data"> <a href="#">Twitter</a></li>
+						</ul>
+						<ul>
+							<li><i class="in"></i></li>
+							<li class="data"><a href="#"> Linkedin</a></li>
+						</ul>
+						<ul>
+							<li><i class="gp"></i></li>
+							<li class="data"><a href="#">Google Plus</a></li>
+						</ul>
+					</div>
+					<div class="col-md-3 contact-section-grid nth-grid wow fadeInRight" data-wow-delay="0.4s">
+						<h4>Subscribe Newsletter</h4>
+						<p>To get latest updates and food deals every week</p>
+						<input type="text" class="text" value="" onFocus="this.value = '';" onBlur="if (this.value == '') {this.value = '';}">
+						<input type="submit" value="submit">
+						</div>
+					<div class="clearfix"></div>
+				</div>
+			</div>
+		</div>
+	<!-- content-section-ends -->
+	<!-- footer-section-starts -->
+	<div class="footer">
+		<div class="container">
+			<p class="wow fadeInLeft" data-wow-delay="0.4s">&copy; 2014  All rights  Reserved | Template by &nbsp;<a href="http://w3layouts.com" target="target_blank">W3Layouts</a></p>
+		</div>
+	</div>
+	<!-- footer-section-ends -->
+	  <script type="text/javascript">
+						$(document).ready(function() {
+							/*
+							var defaults = {
+					  			containerID: 'toTop', // fading element id
+								containerHoverID: 'toTopHover', // fading element hover id
+								scrollSpeed: 1200,
+								easingType: 'linear' 
+					 		};
+							*/
+							
+							$().UItoTop({ easingType: 'easeOutQuart' });
+							
+						});
+					</script>
+				<a href="#" id="toTop" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
+
+</body>
+</html>

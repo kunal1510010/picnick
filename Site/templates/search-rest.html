@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div class="cart-items">
+        <div class="container">
+                 <h1>Your Searched Restaurants</h1>
+
+                 {% for VendorDetails in list %}
+                     <div class="cart-header">
+                             <div class="cart-sec simpleCart_shelfItem">
+                                <div class="cart-item cyc">
+                                     <img src="../static/images/cuisine3.jpg" class="img-responsive" alt="">
+                                </div>
+                               <div class="cart-item-info">
+                                <p><a href="#"><p>Restaurant Name: <strong>{{ VendorDetails.restaurant_name }}</strong> </p> </a><span><p>Location: <strong>{{ VendorDetails.address }}</strong></p></span></p>
+                                <ul class="qty">
+                                    <li><p>Contact Number: <strong>{{ VendorDetails.phone_number }}</strong>  </p></li>
+
+                                </ul>
+                                     <div class="delivery">
+                                     <p><strong>FREE Delivery</strong></p>
+                                     <span>Delivered in Local Address with in 5 to 6 km 10-10:30 hours</span>
+                                     <div class="clearfix"></div>
+                                </div>
+
+
+                                <div>
+                                    <p><a  href="{% url 'Site:Vendor_Profile' VendorDetails.vendor_id %}"><strong><input type="submit" value="Order Now" style="background:#FF6600; color:#FFFFFF; padding:10px;"></strong></a></p>
+
+                                     <div class="clearfix"></div>
+                                </div>
+
+                               </div>
+                               <div class="clearfix"></div>
+
+                          </div>
+                     </div>
+
+
+                 {% endfor %}
+
+
+
+
+
+             </div>
+             </div>
+    <!-- checkout -->
+{% endblock %}

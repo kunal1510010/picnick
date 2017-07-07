@@ -11,6 +11,6 @@ urlpatterns = [
     url(r'^order$', views.order_place, name='Place Order'),
     url(r'^logout$', views.logout, name='Logout'),
     url(r'^$', views.home, name='Home'),
-    url(r'^vendor/profile$', views.vendor_profile, name='Vendor Profile'),
-
+    url(r'^vendor/profile/(?P<vendor_id>.+)$', views.vendor_profile, name='Vendor_Profile'),
+    url(r'^search$', views.search, name='Search'),
 ]

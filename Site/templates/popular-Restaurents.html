@@ -94,18 +94,21 @@
 			
 				<div class="Popular-Restaurants-grid wow fadeInRight" data-wow-delay="0.4s">
 					<div class="col-md-8 restaurent-logo">
-						<img src="../static/images/1(1).jpg" class="img-responsive img-thumbnail" alt="" />
+						<img src="{% static '../static/images/1(1).jpg' %} " class="img-responsive img-thumbnail" alt="" />
 					</div>
 					<div class="col-md-4 restaurent-title">
 					
-							<h4><a href="#">KC kicthen Caboodle</a></h4>
-                            <h5><a href="#"><strong style="padding-left:5px; line-height:35px;">Address :</strong> Dwarka Sec-7 Ramfal Chawk, New Delhi</a></h5>
-                            <h5><a href="#"><strong style="padding-left:5px; line-height:35px;">Contact No :</strong> +91-9999-999-999</a></h5>
+							<h4><a href="#">{{ vendor.restaurant_name }}</a></h4>
+                            <h5><a href="#"><strong style="padding-left:5px; line-height:35px;">Address :</strong>{{ vendor.address }}</a></h5>
+                            <h5><a href="#"><strong style="padding-left:5px; line-height:35px;">Contact No :</strong> +91-{{ vendor.phone_number }}</a></h5>
                             <h5><a href="#"><strong style="padding-left:5px; line-height:35px;">Payment Mode :</strong> Cash & Cards</a></h5>
-                            <h5><a href="#"><strong style="padding-left:5px; line-height:35px;">Cuisines :</strong> Fast Food</a></h5>
+                            {% if vendor.home_delivery == True %}
+                                <h5><a href="#"><strong style="padding-left:5px; line-height:35px;">Home Delivery :</strong> Available</a></h5>
+                            {% else %}
+                                <h5><a href="#"><strong style="padding-left:5px; line-height:35px;">Home Delivery :</strong> Not Available</a></h5>
+                            {% endif %}
                          
-                       
-                       <h5><a href="#"><strong style="padding-left:5px; line-height:30px;">Highlights :</strong> Home Delivery Available</a></h5>   
+
                        <br>
                        
                        <a href=" " class="bg-danger text-white" style="background:#FF6600; color:#FFFFFF; padding:10px;">Order Now </a>

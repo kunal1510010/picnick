@@ -4,7 +4,7 @@ from django.http import HttpResponseRedirect
 from django.shortcuts import render
 from .forms import UserRegister, VendorRegister, LogInUser, OrderForm, SearchForm
 from passlib.hash import pbkdf2_sha256
-from .models import UserDetail, VendorDetail, OrderDetail
+from .models import UserDetail, VendorDetail, OrderDetail, MenuItem
 from django.conf import settings
 from django.core.mail import send_mail
 from django.contrib import messages
@@ -16,7 +16,7 @@ from django.core.exceptions import ObjectDoesNotExist
 
 def get_user(request):
     if 'email' in request.session:
-        return render(request, 'index.html')
+        return HttpResponseRedirect('/Site/')
     form = UserRegister()
     if request.method == 'POST':
         form = UserRegister(request.POST)
@@ -42,7 +42,7 @@ def get_user(request):
                 send_mail(subject, message, from_email, [email_temp], fail_silently=False)
             except:
                 messages.error(request, 'Not Connected to internet or invalid email id provided ')
-            return render(request, 'login.html')
+                return HttpResponseRedirect('/Site/login/user/')
     return render(request, 'register.html', {'form': form})
 
 
@@ -65,13 +65,13 @@ def get_vendor(request):
                                                         phone_number=contact_temp, address=address_temp)
             request.session['email'] = email_temp
             vendor_object.save()
-            return render(request, 'login.html')
+            return HttpResponseRedirect('/Site/login/vendor/')
     return render(request, 'register.html', {'form': form})
 
 
 def login_user(request):
     if 'email' in request.session:
-        return render(request, 'index.html')
+        return HttpResponseRedirect('/Site/')
     form = LogInUser()
     if request.method == 'POST':
         form = LogInUser(request.POST)
@@ -82,7 +82,7 @@ def login_user(request):
                 user_check = UserDetail.objects.get(email_id=email_tmp)
                 if pbkdf2_sha256.verify(password_tmp, user_check.password):
                     request.session['email'] = email_tmp
-                    return HttpResponseRedirect('/Site/login/user')
+                    return HttpResponseRedirect('/Site/')
                 else:
                     messages.error(request, "Password Incorrect")
             except ObjectDoesNotExist:
@@ -116,7 +116,6 @@ def login_vendor(request):
 def order_place(request):
     form = LogInUser()
     if 'email' in request.session:
-        form = OrderForm()
         if request.method == 'POST':
             form = OrderForm(request.POST)
             print(form.is_valid())
@@ -129,20 +128,20 @@ def order_place(request):
                                                              pincode=pincode_temp, coupon_code=coupon_code_temp,
                                                              order_amount=100)
                 delivery_object.save()
-                return render(request, 'login.html')
-        return render(request, 'register.html', {'form': form})
+                return HttpResponseRedirect('/Site/')
+        return HttpResponseRedirect('/Site/order/')
     else:
-        return render(request, 'login.html', {'form': form})
+        return HttpResponseRedirect('/Site/login/user/')
 
 
 def logout(request):
     form = LogInUser()
     if 'email' in request.session:
         del request.session['email']
-        return render(request, 'login.html', {'form': form})
+        return HttpResponseRedirect('/Site/login/user')
     else:
         messages.error(request, "You are already Logged out")
-        return render(request, 'index.html')
+        return HttpResponseRedirect('/Site/')
 
 
 def home(request):
@@ -153,12 +152,26 @@ def home(request):
         print(form.is_valid())
         if form.is_valid():
             key = form.cleaned_data["query"]
-            return render(request, "index.html")
+            return HttpResponseRedirect('/Site/search')
     return render(request,"index.html",{'form': form})
 
 
-def vendor_profile(request):
-    return render(request,"popular-Restaurents.html")
+def vendor_profile(request,vendor_id):
+    vendor = VendorDetail.objects.get(vendor_id=vendor_id)
+    menu = MenuItem.objects.filter(vendor_id=vendor_id)
+    return render(request,"resto new.html",{'vendor': vendor , 'menu': menu})
+
 
 def search(request):
     form = SearchForm()
+    if request.method == 'POST':
+                form = SearchForm(request.POST)
+                if form.is_valid():
+                    search_tmp = form.cleaned_data["query"]
+                    list_item = VendorDetail.objects.filter(restaurant_name__contains=search_tmp)
+                    return render(request, 'search-rest.html', {'form': form,'list': list_item })
+                else :
+                    return HttpResponseRedirect('/Site/')
+
+    list_item = VendorDetail.objects.all()
+    return render(request, 'search-rest.html', {'form': form, 'list':list_item })
