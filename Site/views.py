@@ -156,7 +156,7 @@ def home(request):
     return render(request,"index.html",{'form': form})
 
 
-def vendor_profile(request,vendor_id):
+def vendor_profile(request, vendor_id):
     vendor = VendorDetail.objects.get(vendor_id=vendor_id)
     menu = MenuItem.objects.filter(vendor_id=vendor_id)
     return render(request,"resto new.html",{'vendor': vendor , 'menu': menu})
